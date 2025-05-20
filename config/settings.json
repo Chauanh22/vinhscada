@@ -1,0 +1,62 @@
+{
+  "application": {
+    "name": "SCADA Data Gateway",
+    "version": "1.0.0",
+    "log_level": "INFO",
+    "max_connections": 100
+  },
+  "security": {
+    "enable_encryption": true,
+    "token_expiry_hours": 8,
+    "max_login_attempts": 3
+  },
+  "protocols": {
+    "modbus": {
+      "enabled": true,
+      "default_port": 502,
+      "timeout": 3
+    },
+    "opcua": {
+      "enabled": true,
+      "default_port": 4840,
+      "timeout": 5
+    },
+    "dnp3": {
+      "enabled": true,
+      "default_port": 20000,
+      "timeout": 5
+    },
+    "iec104": {
+      "enabled": true,
+      "default_port": 2404,
+      "timeout": 5
+    },
+    "iec61850": {
+      "enabled": true,
+      "default_port": 102,
+      "timeout": 5
+    },
+    "opcda": {
+      "enabled": true
+    },
+    "mqtt": {
+      "enabled": true,
+      "default_port": 1883,
+      "keep_alive": 60
+    }
+  },
+  "logging": {
+    "file_path": "logs/scada_gateway.log",
+    "max_size_mb": 10,
+    "backup_count": 5,
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  "gui": {
+    "theme": "default",
+    "window_size": {
+      "width": 1024,
+      "height": 768
+    },
+    "refresh_rate_ms": 1000
+  }
+}
